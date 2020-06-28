@@ -1,0 +1,71 @@
+
+D/Contact_List/assets/css/home.css
+
+
+
+
+
+
+
+
+body{
+    background-color: rosybrown;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+#contact-div{
+    border-bottom: 1px solid red;
+    width: 350px;
+    height: 50px;
+   font-size: larger;
+    font-family: sans-serif;
+    display: flex;
+    display: block;
+    align-items: center;
+    top: 20px;
+    background-color: lightblue;
+    margin: 1.5px;
+    text-align: center;
+    
+
+}
+
+
+#main-div{
+   
+    height: auto;
+    width: auto;
+    position: relative;
+    left: 397px;
+}
+
+
+}
+
+#contact-div span{
+    /* display: flex; */
+    padding: 0.5rem;
+}
+
+#delete-btn{
+    font-size: larger;
+}
+
+/* #span-id{
+    padding: 28px;
+    margin: -8px;
+} */
+
+#flex-set{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px;
+}
+
+#page-heading{
+    font-size: 40px;
+    text-align: center;
+}

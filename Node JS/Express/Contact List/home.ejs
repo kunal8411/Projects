@@ -1,0 +1,73 @@
+D/Contact_List/Views/home.ejs
+
+
+
+
+<html>
+    <head>
+        <title>
+            
+            <%=title %>
+            
+        </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/home.css" >
+
+    </head>
+    <body>
+      
+
+        <h2 id="page-heading">
+            <i class="fas fa-address-book"></i>
+           My Contact List 
+        </h2>
+        <div id="main-div">
+            <ul>
+                <%for(let i of contact_list){%>
+                <li id="contact-div">
+                    
+                    
+                        <div id="flex-set">
+                        <span id="span-id"><%=i.name%></span>
+                        <span id="span-id"><%=i.phone%></span>
+                        
+                        </div>
+                        <div id="delete-btn">
+                            <a href="/delete-contact/?id=<%= i._id%>">   
+                                <i class="fas fa-trash-alt">
+    
+                                </i>
+                            </a>
+                        </div> 
+                       
+                         
+                        
+
+                    
+                    
+                    
+                </li>
+                <%}%> 
+            </ul>
+        </div>
+
+               
+                
+        <form action="/create-contact" method="POST" >
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <input type="text" name="phone" placeholder="Enter your Phone number" required>
+
+            <button type="submit">
+                Create Contact 
+            </button>
+
+
+        </form>
+
+
+        <script type="text/javascript" src="/js/home.js">
+
+        </script>
+
+    </body>
+</html>

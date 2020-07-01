@@ -1,59 +1,61 @@
-<html>
-    <head>
-        <title>
+const express = require('express');
+const path= require('path');
+const port= 8000;
 
-        </title>
-    </head>
-
-    <body>
-        <form action="/add-task" method="POST">
-            <input type="text" name="description">
-            <input type="date" name="date">
-            <input type="text" name="category">
-
-            <button type="submit">
-                ADD TASK
-            </button>
-
-            <!-- <button type="submit">DELETE TASK</button> -->
-       </form>
+const app=express();
+app.use(express.urlencoded());
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname,'views'));
 
 
+var todolist=[
+    {
+        description:"Annual report submission deadline",
+        date:29-06-2001,
+        category:"school"
+    },
+    {
+        description:"Final Exam preperation",
+        date:29-06-1222,
+        category:"college"
+    }
+]
 
+app.get('/',function(req,res){
+    return res.render('home',{
+        to_List:todolist
+    });
+});
 
-       <div>
-           <ul>
-               <%for(let i of to_List){%>
+app.post('/add-task',function(req,res){
+    todolist.push({
+        description:req.body.description,
+        date:req.body.date,
+        category:req.body.category
 
-                <li>
-                    <span>
-                        <%=i.description%>
+    });
+    return res.redirect('/');
+});
 
-                    </span>
-                    <span>
-                        <%=i.date%>
-                    </span>
-                    <span>
-                        <%=i.category%>
-                    </span>
-                </li>
+app.get('/delete-task',function(req,res){
+    let desc=req.query.id;
+    console.log(desc);
 
-                <div>
-                    <a href="/delete-task/?id=<%=i.description%>">
-                        <button>
-                            Delete task
-                        </button>
+    var index= todolist.findIndex(contact => contact.description==desc);
 
-                    </a>
-                </div>
+    if(index!=-1){
+        todolist.splice(index,1);
+    }
+    res.redirect('/')
 
-                <%}%>
-           </ul>
+});
 
-           
-       </div>
+app.listen(port,function(err){
+    if(err){
+        console.log("error found");
 
+    }
+    console.log("server is up and running on port:",port);
 
-       
-    </body>
-</html>
+})
+

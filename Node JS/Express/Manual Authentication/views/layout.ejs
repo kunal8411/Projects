@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>
+          Hello
+        </title>
+
+        <link rel="stylesheet"  href="/css/layouts.css" >
+        
+        //if we want to syle pages for every seperate HTML page 
+        <%- style -%>
+
+    </head>
+    <body>
+        //this will include header in every page 
+        <%- include('_header'); -%>
+        
+            <%- body -%>
+
+        <%- include('_footer') -%>
+    </body>
+</html>

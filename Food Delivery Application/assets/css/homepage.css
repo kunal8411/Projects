@@ -1,0 +1,43 @@
+#flex-container{
+	
+	
+    /*float:left;
+    width:20%;
+    padding:15px;
+    margin-top:7px;
+    text-align:center;*/
+      float:left;
+    width:80%;
+      
+  
+      display: flex;
+    flex-wrap: wrap;
+  
+   
+  }
+  
+  
+  
+  .card{
+      margin: 10px;
+      /*height: 18rem;
+      width: 18rem;
+      display: flex;*/
+      /*background-color: lightblue;*/
+  
+  }
+  
+  /* .menu {
+    float:left;
+    width:20%;
+    text-align:center;
+  }
+  
+  .menu a {
+    background-color:#e5e5e5;
+    padding:8px;
+    margin-top:7px;
+    display:block;
+    width:100%;
+    color:black;
+  } */
